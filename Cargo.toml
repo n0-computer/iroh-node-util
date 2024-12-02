@@ -6,20 +6,34 @@ license = "MIT OR Apache-2.0"
 version = "0.28.0"
 edition = "2021"
 authors = ["n0 team"]
-repository = "https://github.com/n0-computer/iroh"
+repository = "https://github.com/n0-computer/iroh-node-util"
 keywords = ["quic", "networking", "holepunching", "p2p"]
 
 # Sadly this also needs to be updated in .github/workflows/ci.yml
 rust-version = "1.76"
 
-[lints]
-workspace = true
+[lints.rust]
+missing_debug_implementations = "warn"
+
+# We use this --cfg for documenting the cargo features on which an API
+# is available.  To preview this locally use: RUSTFLAGS="--cfg
+# iroh_docsrs cargo +nightly doc --all-features".  We use our own
+# iroh_docsrs instead of the common docsrs to avoid also enabling this
+# feature in any dependencies, because some indirect dependencies
+# require a feature enabled when using `--cfg docsrs` which we can not
+# do.  To enable for a crate set `#![cfg_attr(iroh_docsrs,
+# feature(doc_cfg))]` in the crate.
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(iroh_docsrs)"] }
+
+[lints.clippy]
+unused-async = "warn"
+
 
 [dependencies]
 anyhow = "1"
 clap = { version = "4", features = ["derive"], optional = true }
 tokio = "1"
-iroh = { version = "0.28.1", path = "../iroh" }
+iroh = "0.28.1"
 tempfile = "3"
 strum = "0.26"
 nested_enum_utils = "0.1.0"
@@ -54,3 +68,6 @@ cli = ["dep:clap", "dep:colored", "dep:comfy-table", "dep:time", "dep:human-time
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "iroh_docsrs"]
+
+[patch.crates-io]
+iroh = { git = "https://github.com/n0-computer/iroh", branch = "main" }
