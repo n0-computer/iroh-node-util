@@ -884,18 +884,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "educe"
-version = "0.4.23"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f0042ff8246a363dbe77d2ceedb073339e85a804b9a47636c6e016a9a32c05f"
-dependencies = [
- "enum-ordinalize",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "elliptic-curve"
 version = "0.13.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -945,19 +933,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "enum-ordinalize"
-version = "3.1.15"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1bf1fa3f06bbff1ea5b1a9c7b14aa992a39657db60a2759457328d7e058f49ee"
-dependencies = [
- "num-bigint",
- "num-traits",
- "proc-macro2",
- "quote",
- "syn 2.0.90",
-]
-
-[[package]]
 name = "enumflags2"
 version = "0.7.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -991,12 +966,6 @@ checksum = "6c138974f9d5e7fe373eb04df7cae98833802ae4b11c24ac7039a21d5af4b26c"
 dependencies = [
  "serde",
 ]
-
-[[package]]
-name = "erased_set"
-version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "76a5aa24577083f8190ad401e376b55887c7cd9083ae95d83ceec5d28ea78125"
 
 [[package]]
 name = "erased_set"
@@ -1929,8 +1898,9 @@ checksum = "ddc24109865250148c2e0f3d25d4f0f479571723792d3802153c60922a4fb708"
 
 [[package]]
 name = "iroh"
-version = "0.28.1"
-source = "git+https://github.com/n0-computer/iroh?branch=main#e461cca8cd3bcf3b3d51095a2a8ddeffd0af8893"
+version = "0.29.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "80b15215aea8d0367fefb9264521e4a251dc4e113896a3d765f530378518188f"
 dependencies = [
  "anyhow",
  "backoff",
@@ -1955,7 +1925,7 @@ dependencies = [
  "hyper-util",
  "igd-next",
  "iroh-base",
- "iroh-metrics 0.28.0",
+ "iroh-metrics",
  "iroh-net-report",
  "iroh-quinn",
  "iroh-quinn-proto",
@@ -2009,8 +1979,9 @@ dependencies = [
 
 [[package]]
 name = "iroh-base"
-version = "0.28.0"
-source = "git+https://github.com/n0-computer/iroh?branch=main#e461cca8cd3bcf3b3d51095a2a8ddeffd0af8893"
+version = "0.29.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3fd98293ce8e85e6b4f0ce09af7c6bb860f2fece8fcf9238d6e628f1e163e27a"
 dependencies = [
  "aead",
  "anyhow",
@@ -2048,33 +2019,12 @@ dependencies = [
 
 [[package]]
 name = "iroh-metrics"
-version = "0.28.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e0d40f2ee3997489d47403d204a06514ed65373d224b5b43a8ea133f543e5db1"
-dependencies = [
- "anyhow",
- "erased_set 0.7.0",
- "http-body-util",
- "hyper",
- "hyper-util",
- "once_cell",
- "prometheus-client",
- "reqwest",
- "serde",
- "struct_iterable",
- "time",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "iroh-metrics"
 version = "0.29.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a242381d5da20bb4a6cc7482b5cc687a739da8371aff0ea8c12aaf499801886b"
 dependencies = [
  "anyhow",
- "erased_set 0.8.0",
+ "erased_set",
  "http-body-util",
  "hyper",
  "hyper-util",
@@ -2090,8 +2040,9 @@ dependencies = [
 
 [[package]]
 name = "iroh-net-report"
-version = "0.28.0"
-source = "git+https://github.com/n0-computer/iroh?branch=main#e461cca8cd3bcf3b3d51095a2a8ddeffd0af8893"
+version = "0.29.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b82dc449d537176fc90749ae0711c6f81479053086928a2f2bb87cb52646ba74"
 dependencies = [
  "anyhow",
  "bytes",
@@ -2100,7 +2051,7 @@ dependencies = [
  "futures-lite 2.5.0",
  "hickory-resolver",
  "iroh-base",
- "iroh-metrics 0.28.0",
+ "iroh-metrics",
  "iroh-relay",
  "netwatch",
  "portmapper",
@@ -2195,8 +2146,9 @@ dependencies = [
 
 [[package]]
 name = "iroh-relay"
-version = "0.28.0"
-source = "git+https://github.com/n0-computer/iroh?branch=main#e461cca8cd3bcf3b3d51095a2a8ddeffd0af8893"
+version = "0.29.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "28a0d0d7317795a01caa47ffdaeec84211d1b394530bdb31dbe15f642e58bcff"
 dependencies = [
  "anyhow",
  "base64",
@@ -2217,7 +2169,7 @@ dependencies = [
  "hyper",
  "hyper-util",
  "iroh-base",
- "iroh-metrics 0.28.0",
+ "iroh-metrics",
  "iroh-quinn",
  "iroh-quinn-proto",
  "libc",
@@ -3127,7 +3079,7 @@ dependencies = [
  "futures-lite 2.5.0",
  "futures-util",
  "igd-next",
- "iroh-metrics 0.29.0",
+ "iroh-metrics",
  "libc",
  "netwatch",
  "num_enum",
@@ -3315,21 +3267,21 @@ dependencies = [
 
 [[package]]
 name = "quic-rpc"
-version = "0.15.1"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc623a188942fc875926f7baeb2cb08ed4288b64f29072656eb051e360ee7623"
+checksum = "64ae09230350898e9a243a7a4a5fdde934edfb6b010e6a9cfb4136f79b54dbbb"
 dependencies = [
  "anyhow",
  "derive_more",
- "educe",
  "flume",
  "futures-lite 2.5.0",
  "futures-sink",
  "futures-util",
- "hex",
  "pin-project",
  "serde",
  "slab",
+ "smallvec",
+ "time",
  "tokio",
  "tokio-util",
  "tracing",
@@ -3337,9 +3289,9 @@ dependencies = [
 
 [[package]]
 name = "quic-rpc-derive"
-version = "0.15.0"
+version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cbef4c942978f74ef296ae40d43d4375c9d730b65a582688a358108cfd5c0cf7"
+checksum = "44bb53e37914f7e7c6670dc2c834b9299110620cded49e783e78e9d8baf80128"
 dependencies = [
  "proc-macro2",
  "quic-rpc",
@@ -4482,9 +4434,9 @@ dependencies = [
 
 [[package]]
 name = "time"
-version = "0.3.36"
+version = "0.3.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5dfd88e563464686c916c7e46e623e520ddc6d79fa6641390f2e3fa86e83e885"
+checksum = "35e7868883861bd0e56d9ac6efcaaca0d6d5d82a2a7ec8209ff492c07cf37b21"
 dependencies = [
  "deranged",
  "itoa",
@@ -4503,9 +4455,9 @@ checksum = "ef927ca75afb808a4d64dd374f00a2adf8d0fcff8e7b184af886c3c87ec4a3f3"
 
 [[package]]
 name = "time-macros"
-version = "0.2.18"
+version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f252a68540fde3a3877aeea552b832b40ab9a69e318efd078774a01ddee1ccf"
+checksum = "2834e6017e3e5e4b9834939793b282bc03b37a3336245fa820e35e233e2a85de"
 dependencies = [
  "num-conv",
  "time-core",
@@ -4538,9 +4490,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.41.1"
+version = "1.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22cfb5bee7a6a52939ca9224d6ac897bb669134078daa8735560897f69de4d33"
+checksum = "5cec9b21b0450273377fc97bd4c33a8acffc8c996c987a7c5b319a0083707551"
 dependencies = [
  "backtrace",
  "bytes",
