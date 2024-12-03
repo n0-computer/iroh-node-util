@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["iroh_node_util"];
