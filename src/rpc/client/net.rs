@@ -11,7 +11,7 @@ use std::net::SocketAddr;
 
 use anyhow::Result;
 use futures_lite::{Stream, StreamExt};
-use iroh::{endpoint::RemoteInfo, relay::RelayUrl, NodeAddr, NodeId};
+use iroh::{endpoint::RemoteInfo, NodeAddr, NodeId, RelayUrl};
 use quic_rpc::RpcClient;
 use serde::{Deserialize, Serialize};
 
