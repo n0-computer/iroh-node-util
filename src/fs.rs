@@ -2,8 +2,8 @@
 
 use std::path::PathBuf;
 
-use anyhow::Context;
-use iroh::key::SecretKey;
+use anyhow::{bail, Context};
+use iroh::SecretKey;
 use tokio::io::AsyncWriteExt;
 
 /// Loads a [`SecretKey`] from the provided file, or stores a newly generated one
@@ -11,11 +11,21 @@ use tokio::io::AsyncWriteExt;
 pub async fn load_secret_key(key_path: PathBuf) -> anyhow::Result<SecretKey> {
     if key_path.exists() {
         let keystr = tokio::fs::read(key_path).await?;
-        let secret_key = SecretKey::try_from_openssh(keystr).context("invalid keyfile")?;
+
+        let ser_key = ssh_key::private::PrivateKey::from_openssh(keystr)?;
+        let ssh_key::private::KeypairData::Ed25519(kp) = ser_key.key_data() else {
+            bail!("invalid key format");
+        };
+        let secret_key = SecretKey::from_bytes(&kp.private.to_bytes());
         Ok(secret_key)
     } else {
-        let secret_key = SecretKey::generate();
-        let ser_key = secret_key.to_openssh()?;
+        let secret_key = SecretKey::generate(rand::rngs::OsRng);
+        let ckey = ssh_key::private::Ed25519Keypair {
+            public: secret_key.public().public().into(),
+            private: secret_key.secret().into(),
+        };
+        let ser_key =
+            ssh_key::private::PrivateKey::from(ckey).to_openssh(ssh_key::LineEnding::default())?;
 
         // Try to canonicalize if possible
         let key_path = key_path.canonicalize().unwrap_or(key_path);

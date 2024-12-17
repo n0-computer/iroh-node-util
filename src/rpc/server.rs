@@ -1,8 +1,8 @@
 //! Server implementation to handle node and net rpc requests
 use std::{collections::BTreeMap, net::SocketAddr, sync::Arc, time::Duration};
 
-use anyhow::{anyhow, Result};
-use futures_lite::{Stream, StreamExt};
+use anyhow::Result;
+use futures_lite::Stream;
 use iroh::{Endpoint, NodeAddr, NodeId, RelayUrl};
 use quic_rpc::server::{ChannelTypes, RpcChannel, RpcServerError};
 use tracing::{debug, info};
@@ -123,12 +123,8 @@ impl Handler {
     }
 
     async fn local_endpoint_addresses(&self) -> Result<Vec<SocketAddr>> {
-        let endpoints = self
-            .endpoint()
-            .direct_addresses()
-            .next()
-            .await
-            .ok_or(anyhow!("no endpoints found"))?;
+        let endpoints = self.endpoint().direct_addresses().initialized().await?;
+
         Ok(endpoints.into_iter().map(|x| x.addr).collect())
     }
 
@@ -179,7 +175,12 @@ impl Handler {
 
     #[allow(clippy::unused_async)]
     async fn node_relay(self, _: net::RelayRequest) -> RpcResult<Option<RelayUrl>> {
-        Ok(self.endpoint().home_relay())
+        let res = self
+            .endpoint()
+            .home_relay()
+            .get()
+            .map_err(|e| RpcError::new(&e))?;
+        Ok(res)
     }
 
     fn node_watch(self, _: net::NodeWatchRequest) -> impl Stream<Item = net::WatchResponse> + Send {
