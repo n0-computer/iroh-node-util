@@ -2,6 +2,12 @@
 
 All notable changes to iroh-node-util will be documented in this file.
 
+## [0.30.0](https://github.com/n0-computer/iroh-node-util/compare/v0.29.0..0.30.0) - 2024-12-17
+
+### ⛰️  Features
+
+- Update to iroh@0.30.0 ([#3](https://github.com/n0-computer/iroh-node-util/issues/3)) - ([5727fe5](https://github.com/n0-computer/iroh-node-util/commit/5727fe52680fc9bac5cf22e7d0778464e8e55983))
+
 ## [0.29.0] - 2024-12-03
 
 ### ⛰️  Features
@@ -22,5 +28,7 @@ All notable changes to iroh-node-util will be documented in this file.
 
 - Setup files - ([00a73f7](https://github.com/n0-computer/iroh-node-util/commit/00a73f7a1c567a34a43c279bb774639cba46be6a))
 - Update changelog and release tooling - ([506e21b](https://github.com/n0-computer/iroh-node-util/commit/506e21b510a4aa1bfd2372881dfb16a99fbe379f))
+- Release iroh-node-util version 0.29.0 - ([f82eaeb](https://github.com/n0-computer/iroh-node-util/commit/f82eaeb44610065c841d0df100750f3d05b7bfda))
+- Add changelog - ([ef2f663](https://github.com/n0-computer/iroh-node-util/commit/ef2f6632a863413768b3377eb4f2f130069f6c0c))
 
 
