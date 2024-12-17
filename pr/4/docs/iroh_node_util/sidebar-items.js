@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["load_secret_key"],"mod":["cli","config","fs","logging","rpc"]};
+window.SIDEBAR_ITEMS = {"mod":["cli","config","fs","logging","rpc"]};
