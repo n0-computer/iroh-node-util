@@ -32,7 +32,7 @@ unused-async = "warn"
 [dependencies]
 anyhow = "1"
 tokio = "1"
-iroh = "0.30"
+iroh = "0.31"
 tempfile = "3"
 strum = "0.26"
 nested_enum_utils = "0.1.0"
