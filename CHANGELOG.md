@@ -2,13 +2,21 @@
 
 All notable changes to iroh-node-util will be documented in this file.
 
-## [0.31.0](https://github.com/n0-computer/iroh-node-util/compare/v0.30.0..0.31.0) - 2025-01-14
+## [0.32.0](https://github.com/n0-computer/iroh-node-util/compare/v0.31.0..0.32.0) - 2025-02-04
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove individual repo project tracking ([#8](https://github.com/n0-computer/iroh-node-util/issues/8)) - ([3f6a6ab](https://github.com/n0-computer/iroh-node-util/commit/3f6a6aba3c143f96a5cc61508c87085050add45a))
+- Upgrade to `irohv0.32.0` ([#9](https://github.com/n0-computer/iroh-node-util/issues/9)) - ([4a2eff8](https://github.com/n0-computer/iroh-node-util/commit/4a2eff83f47cdb0ecb90309d6e300c01546ce136))
+
+## [0.31.0](https://github.com/n0-computer/iroh-node-util/compare/v0.30.0..v0.31.0) - 2025-01-14
 
 ### ⚙️ Miscellaneous Tasks
 
 - Add project tracking ([#5](https://github.com/n0-computer/iroh-node-util/issues/5)) - ([98fce03](https://github.com/n0-computer/iroh-node-util/commit/98fce03cc7b54c1b17b90ef336077246e69ad38b))
 - Configure semver check with correct package name ([#7](https://github.com/n0-computer/iroh-node-util/issues/7)) - ([74666ec](https://github.com/n0-computer/iroh-node-util/commit/74666ec040ccb90528d70cde5519eece5e2a5c04))
 - Upgrade to `iroh@v0.31.0` ([#6](https://github.com/n0-computer/iroh-node-util/issues/6)) - ([b4d1b20](https://github.com/n0-computer/iroh-node-util/commit/b4d1b20db0e95e88f4603009e3566bfd44e7a484))
+- Release iroh-node-util version 0.31.0 - ([9ba21bf](https://github.com/n0-computer/iroh-node-util/commit/9ba21bf3e13eafc63147906f25bb6913fa6ee67e))
 
 ## [0.30.0](https://github.com/n0-computer/iroh-node-util/compare/v0.29.0..v0.30.0) - 2024-12-17
 
