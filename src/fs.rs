@@ -53,3 +53,16 @@ pub async fn load_secret_key(key_path: PathBuf) -> anyhow::Result<SecretKey> {
         Ok(secret_key)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::load_secret_key;
+    #[tokio::test]
+    async fn secret_key_roundtrip() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("key");
+        let key1 = load_secret_key(path.clone()).await.unwrap();
+        let key2 = load_secret_key(path).await.unwrap();
+        assert_eq!(key1.to_bytes(), key2.to_bytes());
+    }
+}
