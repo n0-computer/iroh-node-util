@@ -32,12 +32,12 @@ unused-async = "warn"
 [dependencies]
 anyhow = "1"
 tokio = "1"
-iroh = "0.33"
+iroh = "0.34"
 tempfile = "3"
 strum = "0.26"
 nested_enum_utils = "0.1.0"
-quic-rpc = "0.18"
-quic-rpc-derive = "0.18"
+quic-rpc = "0.19"
+quic-rpc-derive = "0.19"
 rand = "0.8"
 serde = "1"
 serde-error = "0.1.3"
@@ -71,7 +71,3 @@ cli = ["dep:clap", "dep:colored", "dep:comfy-table", "dep:time", "dep:human-time
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "iroh_docsrs"]
-
-[patch.crates-io]
-iroh = { git = "https://github.com/n0-computer/iroh.git", branch = "main" }
-quic-rpc = { git = "https://github.com/n0-computer/quic-rpc.git", branch = "main" }
