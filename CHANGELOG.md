@@ -2,12 +2,23 @@
 
 All notable changes to iroh-node-util will be documented in this file.
 
-## [0.34.0](https://github.com/n0-computer/iroh-node-util/compare/v0.33.0..0.34.0) - 2025-03-18
+## [0.35.0](https://github.com/n0-computer/iroh-node-util/compare/v0.34.0..0.35.0) - 2025-05-12
+
+### 🧪 Testing
+
+- Test for secret key roundtrip ([#14](https://github.com/n0-computer/iroh-node-util/issues/14)) - ([f8994fa](https://github.com/n0-computer/iroh-node-util/commit/f8994fa739b5e247c7ea5e7a6f41adefbb5b9146))
+
+### ⚙️ Miscellaneous Tasks
+
+- Update to `iroh` v0.35 ([#16](https://github.com/n0-computer/iroh-node-util/issues/16)) - ([bc0039c](https://github.com/n0-computer/iroh-node-util/commit/bc0039c652e0d5c6bf476e1805dd98b3a16ff0e5))
+
+## [0.34.0](https://github.com/n0-computer/iroh-node-util/compare/v0.33.0..v0.34.0) - 2025-03-18
 
 ### ⚙️ Miscellaneous Tasks
 
 - Patch to use main branch of iroh dependencies ([#12](https://github.com/n0-computer/iroh-node-util/issues/12)) - ([8f329b9](https://github.com/n0-computer/iroh-node-util/commit/8f329b931c8872a1c19b14aba5b5f269e8ea1939))
 - Upgrade `iroh` and `quic-rpc` ([#15](https://github.com/n0-computer/iroh-node-util/issues/15)) - ([025bb7a](https://github.com/n0-computer/iroh-node-util/commit/025bb7ade6b39617db2503138c58589f9b15bfe0))
+- Release iroh-node-util version 0.34.0 - ([c0e3cb8](https://github.com/n0-computer/iroh-node-util/commit/c0e3cb8a4e8b2bfbf2ec00d7ebe119f70a9d4c56))
 
 ## [0.33.0](https://github.com/n0-computer/iroh-node-util/compare/v0.32.0..v0.33.0) - 2025-02-25
 
